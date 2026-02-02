@@ -1,12 +1,12 @@
 import React from 'react';
 import { IoAddCircleOutline } from 'react-icons/io5';
 import { useDispatch } from 'react-redux';
-import { openModal } from '../../redux/sliders/modalSlice';
+import { openModal } from '../../redux/slices/modalSlice';
 
 const AddItem = () => {
   const dispatch = useDispatch();
   const handleOpenModal = () => {
-    dispatch(openModal({ modaltype: 'create', task: null }));
+    dispatch(openModal({ modalType: 'create', task: null }));
   };
   return (
     <div className="add-card item w-1/3 h-[25vh] p-[0.25rem]">
@@ -17,7 +17,7 @@ const AddItem = () => {
         >
           <IoAddCircleOutline className="w-8 h-8 text-gray-400 font-light group-hover:text-gray-200" />
           <span className="text-gray-400 group-hover:text-gray-200">
-            할 일 추가하기
+            할일 추가하기
           </span>
         </button>
       </div>

@@ -10,18 +10,15 @@ const app = express();
 app.use(cors()); // 크로스 오리진 설정
 app.use(express.json()); // 제이슨 데이터 파싱
 
-
 // 3. root 설정
-
 app.get('/', (request, response) => {
-    response.send('This is the Main App for Deployment');
-})
+  response.send('This is the Main App for Deployment');
+});
 
 app.use(require('./routes/getRoutes'));
-
+app.use(require('./routes/postRoutes'));
 
 // 4. listen 설정
-
 app.listen(process.env.PORT, () => {
-    console.log(`Server is Running on port ${process.env.PORT}`);
-})
+  console.log(`Server is Running on port ${process.env.PORT}`);
+});

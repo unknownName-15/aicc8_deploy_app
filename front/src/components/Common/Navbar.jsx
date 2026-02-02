@@ -5,7 +5,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, logout } from '../../redux/sliders/authSlice';
+import { login, logout } from '../../redux/slices/authSlice';
 
 const Navbar = () => {
   const path = useLocation();
@@ -38,7 +38,7 @@ const Navbar = () => {
   };
 
   const handleLoginError = (error) => {
-    console.log('Google Login Error: ', error);
+    console.log('Google Logih Error: ', error);
   };
 
   return (
@@ -46,14 +46,14 @@ const Navbar = () => {
       <div className="logo-wrapper flex w-full items-center justify-center gap-8">
         <div className="logo"></div>
         <h2 className="font-semibold text-xl">
-          <Link to="/">SEUNGHEE</Link>
+          <Link to="/">MARSHALL</Link>
         </h2>
       </div>
       <ul className="menus">
         {navMenus.map((menu, idx) => (
           <li
             key={idx}
-            className={`rounded-sm mb-1 border border-gray-700 hover:bg-gray-950 transition-all duration-300 ${
+            className={`rounded-sm mb-2 border border-gray-700 hover:bg-gray-950 transition-all duration-300 ${
               isActive(menu.to) ? 'bg-gray-950' : ''
             }`}
           >
@@ -64,7 +64,7 @@ const Navbar = () => {
         ))}
       </ul>
       {isAuth ? (
-        <div className="auth-button w-4/5 items-center">
+        <div className="auth-button w-4/5 flex items-center">
           <button
             className="flex justify-center items-center gap-2 bg-gray-300 text-gray-900 py-3 px-4 rounded-md w-full"
             onClick={handleLogoutClick}
@@ -87,13 +87,14 @@ const Navbar = () => {
           </GoogleOAuthProvider>
         </div>
       )}
-      {/* <div className="auth-button w-4/5 items-center">
+      {/* <div className="auth-button w-4/5 flex items-center">
         <button className="flex justify-center items-center gap-2 bg-gray-300 text-gray-900 py-3 px-4 rounded-md w-full">
           <FcGoogle />
-          <span className="text-sm">승히님 로그아웃</span>
+          <span className="text-sm">마샬님 로그아웃</span>
         </button>
       </div> */}
       {/* <GoogleOAuthProvider clientId={googleClientId}>
+        <h1>Google 로그인 테스트</h1>
         <GoogleLogin
           onSuccess={handleLoginSuccess}
           onError={() => {
