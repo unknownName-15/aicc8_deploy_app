@@ -67,10 +67,9 @@ const ItemPanel = ({ pageTitle, filteredCompleted, filteredImportant }) => {
       return filteredCompleted ? task.iscompleted : !task.iscompleted;
     })
     .filter((task) => {
-      if (filteredImportant === 'undefined') return true;
+      if (filteredImportant === undefined) return true;
       return filteredImportant ? task.isimportant : !task.isimportant;
     });
-
   return (
     <div className="panel bg-[#212121] w-4/5 h-full rounded-md border border-gray-500 py-5 px-4 overflow-y-auto">
       {userKey ? (
