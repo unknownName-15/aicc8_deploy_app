@@ -4,10 +4,8 @@ import Home from './components/Home';
 import Completed from './components/Completed';
 import Important from './components/Important';
 import Proceeding from './components/Proceeding';
-import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-
-// test test
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (

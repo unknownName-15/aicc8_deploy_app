@@ -87,21 +87,6 @@ const Navbar = () => {
           </GoogleOAuthProvider>
         </div>
       )}
-      {/* <div className="auth-button w-4/5 flex items-center">
-        <button className="flex justify-center items-center gap-2 bg-gray-300 text-gray-900 py-3 px-4 rounded-md w-full">
-          <FcGoogle />
-          <span className="text-sm">마샬님 로그아웃</span>
-        </button>
-      </div> */}
-      {/* <GoogleOAuthProvider clientId={googleClientId}>
-        <h1>Google 로그인 테스트</h1>
-        <GoogleLogin
-          onSuccess={handleLoginSuccess}
-          onError={() => {
-            console.log('로그인 실패');
-          }}
-        />
-      </GoogleOAuthProvider> */}
     </nav>
   );
 };
